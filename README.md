@@ -1,2 +1,2 @@
 # CodeIgniterTODO
-PHP + Cde Igniter ile TODO list uygulaması
+PHP + Code Igniter 4 ile TODO list uygulaması
