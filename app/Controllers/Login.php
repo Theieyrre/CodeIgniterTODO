@@ -24,7 +24,7 @@ class Login extends BaseController
                 if($manager_id == 0)
                     return redirect()->to("adminIndex");
                 else
-                return redirect()->to("index");
+                    return redirect()->to("index");
             }else{
                 echo "NO user";
             }

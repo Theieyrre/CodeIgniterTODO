@@ -2,15 +2,16 @@
 
 namespace App\Controllers;
 
-class AdminIndex extends BaseController
+class Index extends BaseController
 {
     public function index()
     {
         $data = array(
-            $heading = "Admin Index Sayfası"
+            $heading = "TODO Listeniz",
+            $tasks = array()
         );
         echo view('templates/index_header', $data);
-        return view('adminIndex');
+        return view('index', $tasks);
         echo view('templates/index_footer');
     }
 }
