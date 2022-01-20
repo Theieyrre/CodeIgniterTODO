@@ -6,6 +6,8 @@ use App\Models\UsersModel;
 
 class Login extends BaseController
 {
+    protected $helpers = ["cookie", "url"];
+
     public function index()
     {
         echo view('templates/header');
@@ -20,6 +22,7 @@ class Login extends BaseController
             $user = $model->where('email', $_POST["email"])->where('password', $_POST["password"])->first();
             if($user){
                 $user_id = $user['user_id'];
+                set_cookie("user_id", $user_id);
                 $manager_id = $user['manager_id'];
                 if($manager_id == 0)
                     return redirect()->to("adminIndex");

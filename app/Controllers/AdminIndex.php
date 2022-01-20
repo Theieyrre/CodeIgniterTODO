@@ -2,15 +2,20 @@
 
 namespace App\Controllers;
 
-class AdminIndex extends BaseController
+class Adminindex extends BaseController
 {
+    protected $helpers = ["cookie", "url"];
+
     public function index()
     {
-        $data = array(
-            $heading = "Admin Index Sayfası"
-        );
-        echo view('templates/index_header', $data);
-        return view('adminIndex');
-        echo view('templates/index_footer');
+        if(get_cookie("user_id")){
+            $data = array(
+                $heading = "Admin Index Sayfası"
+            );
+            echo view('templates/index_header', $data);
+            return view('admin_index');
+            echo view('templates/index_footer');
+        }else
+            redirect()->to(site_url());
     }
 }
