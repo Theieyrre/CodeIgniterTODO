@@ -1,0 +1,16 @@
+.row .title {
+    margin-top: 10vh;
+}
+
+.task {
+    display: flex;
+    justify-content: space-between;
+}
+
+.task p {
+    margin-left: 2rem;
+}
+
+.task p.done {
+    text-decoration: line-through;
+}
